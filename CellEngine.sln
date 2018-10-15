@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategicGame", "TestStrategicGame\StrategicGame.csproj", "{EDDEE0FF-C460-4211-A0A4-EF4AB676F28F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellEngine", "CellEngine\CellEngine.csproj", "{EDDEE0FF-C460-4211-A0A4-EF4AB676F28F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife", "GameOfLife\GameOfLife.csproj", "{CE0973BE-7FF0-4F05-A271-CBC788B7AE34}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EDDEE0FF-C460-4211-A0A4-EF4AB676F28F} = {EDDEE0FF-C460-4211-A0A4-EF4AB676F28F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGame", "TestGame\TestGame.csproj", "{775D2DFA-64FF-4422-9FC9-BA7DFBCCDD5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategicGame", "StrategicGame\StrategicGame.csproj", "{775D2DFA-64FF-4422-9FC9-BA7DFBCCDD5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,20 +50,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCB3B25A-6D89-4040-9A95-528E9FBD4FA8}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://eugen1344.visualstudio.com/
-		SccProjectUniqueName0 = GameOfLife\\GameOfLife.csproj
-		SccProjectName0 = GameOfLife
-		SccLocalPath0 = GameOfLife
-		SccProjectUniqueName1 = TestGame\\TestGame.csproj
-		SccProjectName1 = TestGame
-		SccLocalPath1 = TestGame
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = TestStrategicGame\\StrategicGame.csproj
-		SccProjectName3 = TestStrategicGame
-		SccLocalPath3 = TestStrategicGame
 	EndGlobalSection
 EndGlobal

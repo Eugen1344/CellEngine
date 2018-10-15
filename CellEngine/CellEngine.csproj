@@ -7,8 +7,8 @@
     <ProjectGuid>{EDDEE0FF-C460-4211-A0A4-EF4AB676F28F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestStrategicGame</RootNamespace>
-    <AssemblyName>TestStrategicGame</AssemblyName>
+    <RootNamespace>CellEngine</RootNamespace>
+    <AssemblyName>CellEngine</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
