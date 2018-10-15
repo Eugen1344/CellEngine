@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using CellEngine.Graphics;
+﻿using CellEngine.Graphics;
 using CellEngine.Shaders;
 using CellEngine.Utils;
 using OJE.GL;
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace CellEngine
 {
@@ -149,15 +149,25 @@ namespace CellEngine
             LoadBuffer();
         }
 
-        private bool CellClicked(Vector2 pos, int mouseButton)
+        private bool CellClicked(Vector2 mousePos, int mouseButton)
         {
-            int j = (int)(pos.x * Camera.Scale / 2 + (Camera.x + 0.5) * 20); //TODO constants (magic numbers)
-            int i = (int)(pos.y * Camera.Scale / 2 + (Camera.y + 0.5) * 20);
+            int i, j;
+            if (!ScreenToCell(mousePos, out i, out j))
+                return false;
+
+            Cell clickedCell = cells[i, j];
+            clickedCell.MouseClick(mouseButton);
+            return true;
+        }
+
+        public bool ScreenToCell(Vector2 mousePos, out int i, out int j)
+        {
+            j = (int)(mousePos.x * Camera.Scale / 2 + (Camera.x + 0.5) * 20); //TODO constants (magic numbers)
+            i = (int)(mousePos.y * Camera.Scale / 2 + (Camera.y + 0.5) * 20);
 
             if (j < 0 || j > SizeX || i < 0 || i > SizeY)
                 return false;
-            Cell clickedCell = cells[i, j];
-            clickedCell.MouseClick(mouseButton);
+
             return true;
         }
 

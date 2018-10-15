@@ -1,5 +1,5 @@
-﻿using System.IO;
-using CellEngine.Graphics;
+﻿using CellEngine.Graphics;
+using System.IO;
 
 namespace CellEngine
 {
@@ -42,6 +42,8 @@ namespace CellEngine
             return Texture.GetTexture(texturePath) ?? new Texture(texturePath, Texture.Type.Nearest);
         }*/
 
+        protected internal virtual void MouseDown(int button) { }
+        protected internal virtual void MouseUp(int button) { }
         protected internal virtual void MouseClick(int button) { }
         protected internal virtual void MouseDrag(int button) { }
         protected internal virtual void Serialize(BinaryWriter stream) { }

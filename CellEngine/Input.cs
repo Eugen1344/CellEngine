@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using CellEngine.Utils;
+﻿using CellEngine.Utils;
 using OJE.GLFW;
+using System;
+using System.Collections.Generic;
 
 namespace CellEngine
 {
@@ -19,7 +19,8 @@ namespace CellEngine
         private static bool mouseMiddleButton;
 
         //List for click callbacks. Sorted by depth, descending
-        private static readonly SortedList<int, Func<Vector2, int, bool>> mouseClick = new SortedList<int, Func<Vector2, int, bool>>(Comparer<int>.Create((el1, el2) => el2 - el1 == 0 ? 1 : el2 - el1)); //TODO maybe sorted dictionary?
+        private static readonly SortedList<int, Func<Vector2, int, KeyState, bool>> mouseEvents =
+            new SortedList<int, Func<Vector2, int, KeyState, bool>>(Comparer<int>.Create((el1, el2) => el2 - el1 == 0 ? 1 : el2 - el1)); //TODO maybe sorted dictionary?
 
         public enum KeyState
         {
@@ -77,9 +78,9 @@ namespace CellEngine
                 {
                     if (MouseButtons[i] == KeyState.Pressed)
                     {
-                        foreach (KeyValuePair<int, Func<Vector2, int, bool>> pair in mouseClick)
+                        foreach (KeyValuePair<int, Func<Vector2, int, KeyState, bool>> pair in mouseEvents)
                         {
-                            if (pair.Value != null && pair.Value.Invoke(GetMousePosition(), i))
+                            if (pair.Value != null && pair.Value.Invoke(GetMousePosition(), i, KeyState.Clicked))
                                 break;
                         }
                         MouseButtons[i] = KeyState.Clicked;

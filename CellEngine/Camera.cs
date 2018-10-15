@@ -4,6 +4,7 @@ namespace CellEngine
 {
     public static class Camera
     {
+        public static bool Enabled = true;
         public static float x;
         public static float y;
         public static float Scale = 20f;
@@ -16,6 +17,9 @@ namespace CellEngine
 
         public static void UpdateInput()
         {
+            if (!Enabled)
+                return;
+
             float moveFactor = MoveSpeed * Scale;
 
             if (Input.GetKey(Glfw.KEY_W) == Input.KeyState.Pressed)
@@ -27,7 +31,7 @@ namespace CellEngine
             if (Input.GetKey(Glfw.KEY_D) == Input.KeyState.Pressed)
                 x += (float)Time.DeltaTime * moveFactor;
 
-            float zoomFactor = (float) Time.DeltaTime * ZoomSpeed * Scale;
+            float zoomFactor = (float)Time.DeltaTime * ZoomSpeed * Scale;
             if (Input.GetKey(Glfw.KEY_EQUAL) == Input.KeyState.Pressed)
             {
                 float newScale = Scale - zoomFactor;
