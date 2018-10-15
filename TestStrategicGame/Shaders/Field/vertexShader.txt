@@ -1,0 +1,16 @@
+﻿//CELL
+#version 330 core
+
+layout (location = 0) in vec2 index;
+layout (location = 1) in vec4 color;
+layout (location = 2) in float texture;
+
+out vec4 Color;
+out float TextureLayer;
+
+void main()
+{
+	gl_Position = vec4(index.xy, 1, 1);
+	Color = color;
+	TextureLayer = texture;
+}

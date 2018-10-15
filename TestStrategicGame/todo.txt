@@ -1,0 +1,5 @@
+﻿[BROKEN]
+Not square window
+
+[FEATURES]
+Cell info panel

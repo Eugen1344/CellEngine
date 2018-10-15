@@ -1,0 +1,18 @@
+﻿//CELL
+#version 330 core
+
+uniform sampler2DArray textureArray;
+
+out vec4 color;
+
+in vec4 originalColor;
+in vec3 textureCoord;
+
+void main()
+{
+    //color = originalColor * vec4((sin(time/600) + 1) / 2, (sin(time/600) + 1) / 2, (sin(time/600) + 1) / 2, 1);
+	if(textureCoord.z != -1)
+		color = texture(textureArray, textureCoord) * originalColor;
+	else
+		color = originalColor;
+}

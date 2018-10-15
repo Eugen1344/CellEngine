@@ -1,0 +1,24 @@
+﻿#version 330 core
+
+layout (location = 0) in vec2 pos;
+layout (location = 1) in vec4 color;
+layout (location = 2) in vec2 texturePos;
+layout (location = 3) in vec2 textureSize;
+layout (location = 4) in vec2 sizeMultiplier;
+layout (location = 5) in float page;
+
+out vec4 Color;
+out vec2 TexturePos;
+out vec2 TextureSize;
+out vec2 SizeMultiplier;
+out float Page;
+
+void main()
+{
+	Color = color;
+	TexturePos = texturePos;
+	TextureSize = textureSize;
+	SizeMultiplier = sizeMultiplier;
+	Page = page;
+	gl_Position = vec4(pos.xy, 1, 1);
+}

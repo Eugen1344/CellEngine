@@ -1,0 +1,51 @@
+﻿//FONT
+#version 330 core
+
+layout(points) in;
+layout(triangle_strip, max_vertices = 4) out;
+
+in vec4[] Color;
+in vec2[] TexturePos;
+in vec2[] TextureSize;
+in vec2[] SizeMultiplier;
+in float[] Page;
+
+uniform float CharSize;
+
+out vec4 originalColor;
+out vec3 textureCoord;
+
+void main()
+{
+	originalColor = Color[0];
+	float textureLayer = Page[0];
+	vec2 texturePos = TexturePos[0];
+	vec2 textureSize = TextureSize[0];
+	
+	vec4 pos = gl_in[0].gl_Position;
+	
+	//Moving
+	float xPosL = pos.x;
+	float yPosL = pos.y;
+	float xPosH = pos.x + CharSize * SizeMultiplier[0].x;
+	float yPosH = pos.y + CharSize * SizeMultiplier[0].y;
+	
+	//Vertices
+	textureCoord = vec3(texturePos.x, texturePos.y + textureSize.y, textureLayer);
+	gl_Position = vec4(xPosL, yPosL, 1, 1);
+	EmitVertex();
+
+	textureCoord = vec3(texturePos, textureLayer);
+	gl_Position = vec4(xPosL, yPosH, 1, 1);
+	EmitVertex();
+
+	textureCoord = vec3(texturePos + textureSize, textureLayer);
+	gl_Position = vec4(xPosH, yPosL, 1, 1);
+	EmitVertex();
+	
+	textureCoord = vec3(texturePos.x + textureSize.x, texturePos.y, textureLayer);
+	gl_Position = vec4(xPosH, yPosH, 1, 1);
+	EmitVertex();
+
+	EndPrimitive();
+}
