@@ -1,4 +1,4 @@
-﻿namespace TestStrategicGame
+﻿namespace CellEngine
 {
     public abstract class MainScript
     {

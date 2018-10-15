@@ -1,4 +1,4 @@
-﻿using TestStrategicGame;
+﻿using CellEngine;
 
 namespace GameOfLife
 {

@@ -3,8 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using GameOfLife.Cells;
 using OJE.GLFW;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
+using CellEngine;
+using CellEngine.Graphics;
 
 namespace GameOfLife
 {

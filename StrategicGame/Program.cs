@@ -1,8 +1,6 @@
-﻿using TestGame.Cells;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
+﻿using CellEngine;
 
-namespace TestGame
+namespace StrategicGame
 {
     static class Program
     {

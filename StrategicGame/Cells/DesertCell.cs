@@ -1,7 +1,7 @@
-﻿using TestStrategicGame;
-using TestStrategicGame.Graphics;
+﻿using CellEngine;
+using CellEngine.Graphics;
 
-namespace TestGame.Cells
+namespace StrategicGame.Cells
 {
     public class DesertCell : ClickableCell
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using OJE.GL;
 
-namespace TestStrategicGame.Shaders
+namespace CellEngine.Shaders
 {
     public class ShaderProgram
     {

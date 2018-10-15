@@ -5,11 +5,11 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using CellEngine.Shaders;
+using CellEngine.Utils;
 using OJE.GL;
-using TestStrategicGame.Shaders;
-using TestStrategicGame.Utils;
 
-namespace TestStrategicGame.Graphics
+namespace CellEngine.Graphics
 {
     public class Font
     {

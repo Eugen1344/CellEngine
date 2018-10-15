@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
+using CellEngine;
+using CellEngine.Graphics;
 
 namespace GameOfLife.Cells
 {

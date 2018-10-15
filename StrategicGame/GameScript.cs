@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
+using CellEngine;
+using CellEngine.Graphics;
 using OJE.GLFW;
-using TestGame.Cells;
-using TestGame.Graphics.GUI;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Graphics.GUI;
+using StrategicGame.Cells;
+using StrategicGame.Graphics.GUI;
 
-namespace TestGame
+namespace StrategicGame
 {
     public class GameScript : MainScript
     {

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using OJE.GL;
 
-namespace TestStrategicGame.Graphics
+namespace CellEngine.Graphics
 {
     public class CellTexture
     {

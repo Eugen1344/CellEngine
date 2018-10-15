@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
+using CellEngine.Utils;
 using OJE.GLFW;
-using TestStrategicGame.Graphics.GUI;
-using TestStrategicGame.Utils;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     //TODO COMPLETELY REWRITE!!!
     public static class Input //TODO multiple windows

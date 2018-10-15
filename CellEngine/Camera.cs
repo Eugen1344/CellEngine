@@ -1,6 +1,6 @@
 ﻿using OJE.GLFW;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public static class Camera
     {

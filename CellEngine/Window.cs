@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CellEngine.Graphics.GUI;
 using OJE.GL;
 using OJE.GLFW;
-using TestStrategicGame.Graphics.GUI;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public class Window
     {

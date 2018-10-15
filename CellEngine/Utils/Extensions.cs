@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestStrategicGame.Utils
+namespace CellEngine.Utils
 {
     public static class Extensions
     {

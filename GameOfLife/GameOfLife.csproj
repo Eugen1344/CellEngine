@@ -60,13 +60,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestGame\TestGame.csproj">
-      <Project>{775D2DFA-64FF-4422-9FC9-BA7DFBCCDD5B}</Project>
-      <Name>TestGame</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestStrategicGame\StrategicGame.csproj">
-      <Project>{EDDEE0FF-C460-4211-A0A4-EF4AB676F28F}</Project>
-      <Name>StrategicGame</Name>
+    <ProjectReference Include="..\CellEngine\CellEngine.csproj">
+      <Project>{eddee0ff-c460-4211-a0a4-ef4ab676f28f}</Project>
+      <Name>CellEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

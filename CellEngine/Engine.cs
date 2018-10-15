@@ -2,7 +2,7 @@
 using OJE.GL;
 using OJE.GLFW;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public static class Engine
     {

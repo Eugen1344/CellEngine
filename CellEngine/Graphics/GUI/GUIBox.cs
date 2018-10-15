@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using CellEngine.Shaders;
+using CellEngine.Utils;
 using OJE.GL;
-using TestStrategicGame.Shaders;
-using TestStrategicGame.Utils;
 
-namespace TestStrategicGame.Graphics.GUI
+namespace CellEngine.Graphics.GUI
 {
     public unsafe class GUIBox : GUIBase
     {

@@ -4,9 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public class SaveData
     {

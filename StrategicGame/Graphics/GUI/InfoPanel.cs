@@ -1,9 +1,9 @@
-﻿using TestStrategicGame;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Graphics.GUI;
-using TestStrategicGame.Utils;
+﻿using CellEngine;
+using CellEngine.Graphics;
+using CellEngine.Graphics.GUI;
+using CellEngine.Utils;
 
-namespace TestGame.Graphics.GUI
+namespace StrategicGame.Graphics.GUI
 {
     public static class InfoPanel
     {

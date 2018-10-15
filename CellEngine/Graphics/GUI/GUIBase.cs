@@ -1,7 +1,7 @@
 ﻿using System;
-using TestStrategicGame.Utils;
+using CellEngine.Utils;
 
-namespace TestStrategicGame.Graphics.GUI
+namespace CellEngine.Graphics.GUI
 {
     public enum Pivot //TODO move?
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestStrategicGame.Graphics
+namespace CellEngine.Graphics
 {
     public static class CellTextureManager
     {

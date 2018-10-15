@@ -1,9 +1,8 @@
-﻿using TestGame.Graphics.GUI;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Graphics.GUI;
+﻿using CellEngine;
+using CellEngine.Graphics;
+using StrategicGame.Graphics.GUI;
 
-namespace TestGame
+namespace StrategicGame
 {
     public abstract class ClickableCell : Cell
     {

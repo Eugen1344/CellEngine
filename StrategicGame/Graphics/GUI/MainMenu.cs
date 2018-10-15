@@ -1,10 +1,10 @@
-﻿using OJE.GLFW;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Graphics.GUI;
-using TestStrategicGame.Utils;
+﻿using CellEngine;
+using CellEngine.Graphics;
+using CellEngine.Graphics.GUI;
+using CellEngine.Utils;
+using OJE.GLFW;
 
-namespace TestGame.Graphics.GUI
+namespace StrategicGame.Graphics.GUI
 {
     public static class MainMenu
     {

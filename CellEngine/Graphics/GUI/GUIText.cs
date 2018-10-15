@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using CellEngine.Utils;
 using OJE.GL;
-using TestStrategicGame.Utils;
 
-namespace TestStrategicGame.Graphics.GUI
+namespace CellEngine.Graphics.GUI
 {
     public unsafe class GUIText : GUIBase
     {

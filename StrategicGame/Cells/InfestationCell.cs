@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Utils;
+using CellEngine;
+using CellEngine.Graphics;
+using CellEngine.Utils;
 
-namespace TestGame.Cells
+namespace StrategicGame.Cells
 {
     public class InfestationCell : ClickableCell
     {

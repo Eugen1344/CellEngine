@@ -1,9 +1,7 @@
 ﻿using System.IO;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Graphics.GUI;
-using TestStrategicGame.Utils;
+using CellEngine.Graphics;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public abstract class Cell
     {

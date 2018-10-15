@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
-using TestStrategicGame;
-using TestStrategicGame.Graphics;
+using CellEngine.Graphics;
 
-namespace TestGame.Cells
+namespace StrategicGame.Cells
 {
     public class CropCell : ClickableCell
     {

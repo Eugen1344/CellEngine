@@ -62,5 +62,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CellEngine\CellEngine.csproj">
+      <Project>{eddee0ff-c460-4211-a0a4-ef4ab676f28f}</Project>
+      <Name>CellEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

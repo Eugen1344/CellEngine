@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.InteropServices;
+using CellEngine.Graphics;
+using CellEngine.Shaders;
+using CellEngine.Utils;
 using OJE.GL;
-using TestStrategicGame.Graphics;
-using TestStrategicGame.Shaders;
-using TestStrategicGame.Utils;
 
-namespace TestStrategicGame
+namespace CellEngine
 {
     public unsafe class Field
     {

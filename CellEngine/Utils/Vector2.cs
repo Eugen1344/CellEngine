@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TestStrategicGame.Utils
+namespace CellEngine.Utils
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct Vector2

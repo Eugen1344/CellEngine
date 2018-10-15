@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TestStrategicGame.Graphics
+namespace CellEngine.Graphics
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct Color
