@@ -1,6 +1,5 @@
 ﻿using CellEngine.Utils;
 using OJE.GLFW;
-using System;
 using System.Collections.Generic;
 
 namespace CellEngine
@@ -18,9 +17,11 @@ namespace CellEngine
         private static bool mouseRightButton;
         private static bool mouseMiddleButton;
 
+        public delegate bool MouseEventFunc(Vector2 mousePos, int mouseButton, KeyState keyState);
+
         //List for click callbacks. Sorted by depth, descending
-        private static readonly SortedList<int, Func<Vector2, int, KeyState, bool>> mouseEvents =
-            new SortedList<int, Func<Vector2, int, KeyState, bool>>(Comparer<int>.Create((el1, el2) => el2 - el1 == 0 ? 1 : el2 - el1)); //TODO maybe sorted dictionary?
+        private static readonly SortedList<int, MouseEventFunc> mouseEvents =
+            new SortedList<int, MouseEventFunc>(Comparer<int>.Create((el1, el2) => el2 - el1 == 0 ? 1 : el2 - el1)); //TODO maybe sorted dictionary?
 
         public enum KeyState
         {
@@ -78,7 +79,7 @@ namespace CellEngine
                 {
                     if (MouseButtons[i] == KeyState.Pressed)
                     {
-                        foreach (KeyValuePair<int, Func<Vector2, int, KeyState, bool>> pair in mouseEvents)
+                        foreach (KeyValuePair<int, MouseEventFunc> pair in mouseEvents)
                         {
                             if (pair.Value != null && pair.Value.Invoke(GetMousePosition(), i, KeyState.Clicked))
                                 break;
@@ -121,14 +122,14 @@ namespace CellEngine
             return new Vector2(2 * (float)x / Engine.MainWindow.Width - 1, 2 * (Engine.MainWindow.Height - (float)y) / Engine.MainWindow.Height - 1);
         }
 
-        public static void SubscribeMouseClick(Func<Vector2, int, bool> method, int priority)
+        public static void SubscribeMouseClick(MouseEventFunc method, int priority)
         {
-            mouseClick.Add(priority, method);
+            mouseEvents.Add(priority, method);
         }
 
-        public static void UnsubscribeMouseClick(Func<Vector2, int, bool> method)
+        public static void UnsubscribeMouseClick(MouseEventFunc method)
         {
-            mouseClick.RemoveAt(mouseClick.IndexOfValue(method));
+            mouseEvents.RemoveAt(mouseEvents.IndexOfValue(method));
         }
 
         public static KeyState GetKey(char button)

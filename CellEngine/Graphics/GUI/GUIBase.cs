@@ -120,7 +120,7 @@ namespace CellEngine.Graphics.GUI
         }
 
         //Fires on mouse click
-        private bool OnClick(Vector2 pos, int button)
+        private bool OnClick(Vector2 pos, int button, Input.KeyState keyState)
         {
             if (Clickable && Enabled && IsClicked(pos, button))
             {

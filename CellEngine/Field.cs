@@ -149,13 +149,16 @@ namespace CellEngine
             LoadBuffer();
         }
 
-        private bool CellClicked(Vector2 mousePos, int mouseButton)
+        private bool CellClicked(Vector2 mousePos, int mouseButton, Input.KeyState keyState)
         {
             int i, j;
             if (!ScreenToCell(mousePos, out i, out j))
                 return false;
 
             Cell clickedCell = cells[i, j];
+            if (cells[i, j] == null)
+                return false;
+
             clickedCell.MouseClick(mouseButton);
             return true;
         }
@@ -220,9 +223,12 @@ namespace CellEngine
                 for (uint j = 0; j < SizeX; j++)
                 {
                     Cell cell = cells[i, j];
+                    if (cell == null)
+                        continue;
+
                     cell.y = i;
                     cell.x = j;
-                    field[i * SizeY + j] = new CellPoint { x = j, y = i, color = cell.Color, textureLayer = cell.TextureLayer };
+                    field[i * SizeX + j] = new CellPoint { x = j, y = i, color = cell.Color, textureLayer = cell.TextureLayer };
                 }
             }
 

@@ -1,4 +1,5 @@
 ﻿[BROKEN]
+CLICKS SHOULD BE FIXED. If you press a mouse button on a cell, but release it on a different cell, click will still be fired on a former cell
 Not square window
 
 [FEATURES]

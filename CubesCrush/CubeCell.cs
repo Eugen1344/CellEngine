@@ -1,5 +1,6 @@
 ﻿using CellEngine;
 using CellEngine.Graphics;
+using System;
 
 namespace CubesCrush
 {
@@ -19,9 +20,9 @@ namespace CubesCrush
 
         }
 
-        protected override void MouseDrag(int button)
+        protected override void MouseClick(int button)
         {
-            base.MouseDrag(button);
+            Console.WriteLine($"{x} {y}");
         }
     }
 }
