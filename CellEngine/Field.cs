@@ -153,6 +153,15 @@ namespace CellEngine
 
         private bool CellClicked(Vector2 mousePos, int mouseButton, Input.KeyState keyState)
         {
+            if (keyState == Input.KeyState.Released)
+            {
+                foreach (Cell cell in cells)
+                {
+                    cell.MouseUp(mouseButton);
+                }
+                return true;
+            }
+
             int i, j;
             if (!ScreenToCell(mousePos, out i, out j))
                 return false;
@@ -163,9 +172,6 @@ namespace CellEngine
 
             switch (keyState)
             {
-                case Input.KeyState.Released:
-                    clickedCell.MouseUp(mouseButton);
-                    break;
                 case Input.KeyState.Pressed:
                     pressedCell = clickedCell;
                     clickedCell.MouseDown(mouseButton);
@@ -220,6 +226,8 @@ namespace CellEngine
 
         internal void RenderLoop()
         {
+            LoadBuffer();
+
             mainProgram.Use();
             GL.BindVertexArray(vao);
             GL.BindTexture(GL.TEXTURE_2D_ARRAY, textureId);

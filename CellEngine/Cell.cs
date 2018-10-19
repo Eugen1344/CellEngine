@@ -5,15 +5,15 @@ namespace CellEngine
 {
     public abstract class Cell
     {
-        public uint x { get; protected internal set; }
-        public uint y { get; protected internal set; }
+        public uint x { get; internal set; }
+        public uint y { get; internal set; }
 
         public Color Color { get; protected set; }
 
         private CellTexture texture;
         public CellTexture Texture
         {
-            get { return texture; }
+            get => texture;
             protected set
             {
                 TextureLayer = CellTextureManager.GetTextureLayer(value);
@@ -43,7 +43,6 @@ namespace CellEngine
         }*/
 
         protected internal virtual void MouseDown(int button) { }
-        protected internal virtual void MouseUp(int button) { }
         protected internal virtual void MouseClick(int button) { }
         protected internal virtual void MouseDrag(int button) { } //WHY?
         protected internal virtual void Serialize(BinaryWriter stream) { }

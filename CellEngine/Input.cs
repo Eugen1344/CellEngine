@@ -102,7 +102,6 @@ namespace CellEngine
                             {
                                 if (clickReceiver != null && clickReceiver == pair.Value)
                                     clickReceiver(mousePos, i, KeyState.Clicked);
-                                break;
                             }
                         }
                         clickReceiver = null;

@@ -33,6 +33,7 @@ namespace CubesCrush
 
         protected override void MouseUp(int button)
         {
+            Texture = null;
             Console.WriteLine($"UP {x} {y}");
         }
     }
