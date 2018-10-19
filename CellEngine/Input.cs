@@ -23,6 +23,8 @@ namespace CellEngine
         private static readonly SortedList<int, MouseEventFunc> mouseEvents =
             new SortedList<int, MouseEventFunc>(Comparer<int>.Create((el1, el2) => el2 - el1 == 0 ? 1 : el2 - el1)); //TODO maybe sorted dictionary?
 
+        private static MouseEventFunc clickReceiver = null;
+
         public enum KeyState
         {
             Released,
@@ -74,16 +76,36 @@ namespace CellEngine
             {
                 int mouse = Glfw.GetMouseButton(Engine.MainWindow.GlfwWindow, i);
                 if (mouse == Glfw.PRESS)
+                {
+                    if (MouseButtons[i] != KeyState.Pressed)
+                    {
+                        foreach (KeyValuePair<int, MouseEventFunc> pair in mouseEvents)
+                        {
+                            if (pair.Value != null && pair.Value.Invoke(GetMousePosition(), i, KeyState.Pressed))
+                            {
+                                clickReceiver = pair.Value;
+                                break;
+                            }
+                        }
+                    }
                     MouseButtons[i] = KeyState.Pressed;
+                }
                 else if (mouse == Glfw.RELEASE)
                 {
                     if (MouseButtons[i] == KeyState.Pressed)
                     {
                         foreach (KeyValuePair<int, MouseEventFunc> pair in mouseEvents)
                         {
-                            if (pair.Value != null && pair.Value.Invoke(GetMousePosition(), i, KeyState.Clicked))
+                            Vector2 mousePos = GetMousePosition();
+
+                            if (pair.Value != null && pair.Value.Invoke(mousePos, i, KeyState.Released))
+                            {
+                                if (clickReceiver != null && clickReceiver == pair.Value)
+                                    clickReceiver(mousePos, i, KeyState.Clicked);
                                 break;
+                            }
                         }
+                        clickReceiver = null;
                         MouseButtons[i] = KeyState.Clicked;
                     }
                     else if (MouseButtons[i] == KeyState.Clicked)

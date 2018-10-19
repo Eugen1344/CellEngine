@@ -22,7 +22,18 @@ namespace CubesCrush
 
         protected override void MouseClick(int button)
         {
-            Console.WriteLine($"{x} {y}");
+            Console.WriteLine($"CLICK {x} {y}");
+        }
+
+        protected override void MouseDown(int button)
+        {
+            Texture = CellTexture.GetTexture("Resources\\clicked.png");
+            Console.WriteLine($"DOWN {x} {y}");
+        }
+
+        protected override void MouseUp(int button)
+        {
+            Console.WriteLine($"UP {x} {y}");
         }
     }
 }

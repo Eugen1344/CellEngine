@@ -24,6 +24,8 @@ namespace CellEngine
         private static int vbo;
         private static int textureId;
 
+        private static Cell pressedCell = null;
+
         [StructLayout(LayoutKind.Sequential)]
         struct CellPoint
         {
@@ -159,7 +161,22 @@ namespace CellEngine
             if (cells[i, j] == null)
                 return false;
 
-            clickedCell.MouseClick(mouseButton);
+            switch (keyState)
+            {
+                case Input.KeyState.Released:
+                    clickedCell.MouseUp(mouseButton);
+                    break;
+                case Input.KeyState.Pressed:
+                    pressedCell = clickedCell;
+                    clickedCell.MouseDown(mouseButton);
+                    break;
+                case Input.KeyState.Clicked:
+                    if (pressedCell == clickedCell)
+                        clickedCell.MouseClick(mouseButton);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("Invalid click state");
+            }
             return true;
         }
 
