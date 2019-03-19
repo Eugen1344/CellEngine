@@ -16,8 +16,7 @@ namespace GameOfLife
         {
             Console.WriteLine("Game of life started");
 
-            Color infestationColor = Color.RandomColor();
-            Cell[,] testCells = new Cell[1000, 1000];
+            Cell[,] testCells = new Cell[500, 500];
 
             for (uint i = 0; i < testCells.GetLength(0); i++)
                 for (uint j = 0; j < testCells.GetLength(1); j++)
@@ -27,7 +26,7 @@ namespace GameOfLife
 
             for (int i = 0; i < 50000; i++)
             {
-                testCells[rand.Next(0, 1000), rand.Next(0, 1000)] = new AliveCell();
+                testCells[rand.Next(0, 500), rand.Next(0, 500)] = new AliveCell();
             }
             
 
@@ -43,11 +42,11 @@ namespace GameOfLife
 
         public override void Update()
         {
-            if (timer.ElapsedMilliseconds >= 100)
+            /*if (timer.ElapsedMilliseconds >= 100)
             {
                 timer.Restart();
-                Engine.Tick();
-            }
+                //Engine.Tick();
+            }*/
 
             if (Input.GetKey(Glfw.KEY_SPACE) == Input.KeyState.Clicked)
                 Engine.Tick();

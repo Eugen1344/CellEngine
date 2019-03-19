@@ -42,7 +42,7 @@ namespace CellEngine.Graphics.GUI
         {
             Shader.Use();
             GL.BindVertexArray(vao);
-            GL.DrawArrays(GL.TRIANGLE_FAN, 0, 4);
+            GL.DrawArrays(GL.TRIANGLE_FAN, 0, 4); //TODO STRIP??
             GL.BindVertexArray(0);
             ShaderProgram.Unbind();
         }

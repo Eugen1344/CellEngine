@@ -43,6 +43,7 @@ namespace CellEngine
         }*/
 
         protected internal virtual void MouseDown(int button) { }
+        protected internal virtual void MouseUp(int button) { }
         protected internal virtual void MouseClick(int button) { }
         protected internal virtual void MouseDrag(int button) { } //WHY?
         protected internal virtual void Serialize(BinaryWriter stream) { }
