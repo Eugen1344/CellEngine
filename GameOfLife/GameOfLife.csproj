@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Saves\gun.save" />
+    <None Include="Saves\shit.save" />
+    <None Include="Saves\shit_snake.save" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CellEngine\CellEngine.csproj">

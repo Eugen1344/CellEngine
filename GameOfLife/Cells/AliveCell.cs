@@ -19,6 +19,12 @@ namespace GameOfLife.Cells
                 Engine.CurrentField.SetCell(new DeadCell(), y, x);
         }
 
+        protected override void MouseClick(int button)
+        {
+            Engine.CurrentField.SetCell(new DeadCell(), y, x);
+            Engine.CurrentField.UpdateCells();
+        }
+
         protected override void Remove()
         {
 

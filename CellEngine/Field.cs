@@ -60,6 +60,9 @@ namespace CellEngine
         public void SetCell(Cell cell, uint y, uint x)
         {
             modifiedCells[y, x] = cell;
+
+            if (cell == null) return;
+
             cell.x = x;
             cell.y = y;
         }
@@ -132,8 +135,14 @@ namespace CellEngine
 
         public void Tick()
         {
+            UpdateCells();
+
             foreach (Cell cell in cells)
                 cell?.Tick();
+        }
+
+        public void UpdateCells()
+        {
             for (int i = 0; i < modifiedCells.GetLength(0); i++)
             {
                 for (int j = 0; j < modifiedCells.GetLength(1); j++)

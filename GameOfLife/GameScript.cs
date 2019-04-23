@@ -4,19 +4,22 @@ using System.IO;
 using GameOfLife.Cells;
 using OJE.GLFW;
 using CellEngine;
-using CellEngine.Graphics;
+using CellEngine.Utils;
 
 namespace GameOfLife
 {
     public class GameScript : MainScript
     {
+        public bool Paused = false;
+        public const int sizeX = 160;
+        public const int sizeY = 160;
         private Stopwatch timer = new Stopwatch();
 
         public override void Start()
         {
             Console.WriteLine("Game of life started");
 
-            Cell[,] testCells = new Cell[500, 500];
+            Cell[,] testCells = new Cell[sizeY, sizeX];
 
             for (uint i = 0; i < testCells.GetLength(0); i++)
                 for (uint j = 0; j < testCells.GetLength(1); j++)
@@ -24,11 +27,11 @@ namespace GameOfLife
 
             Random rand = new Random();
 
-            for (int i = 0; i < 50000; i++)
+            for (int i = 0; i < 5000; i++)
             {
-                testCells[rand.Next(0, 500), rand.Next(0, 500)] = new AliveCell();
+                testCells[rand.Next(0, sizeY), rand.Next(0, sizeX)] = new AliveCell();
             }
-            
+
 
             Engine.SwitchField(new Field(testCells));
 
@@ -42,14 +45,30 @@ namespace GameOfLife
 
         public override void Update()
         {
+            if (!Paused)
+                Engine.Tick();
             /*if (timer.ElapsedMilliseconds >= 100)
             {
                 timer.Restart();
-                //Engine.Tick();
+                Engine.Tick();
             }*/
 
-            if (Input.GetKey(Glfw.KEY_SPACE) == Input.KeyState.Clicked)
+            if (Input.GetKey(Glfw.KEY_BACKSPACE) == Input.KeyState.Clicked)
+            {
+                for (uint i = 0; i < Engine.CurrentField.SizeY; i++)
+                {
+                    for (uint j = 0; j < Engine.CurrentField.SizeX; j++)
+                    {
+                        Engine.CurrentField.SetCell(new DeadCell(), i, j);
+                    }
+                }
+            }
+
+            if (Input.GetKey(Glfw.KEY_PERIOD) == Input.KeyState.Clicked)
                 Engine.Tick();
+
+            if (Input.GetKey(Glfw.KEY_SPACE) == Input.KeyState.Clicked)
+                Paused = !Paused;
             if (Input.GetKey(Glfw.KEY_F5) == Input.KeyState.Clicked)
             {
                 FileStream file = new FileStream("quick.save", FileMode.Create, FileAccess.Write);

@@ -132,7 +132,6 @@ namespace CellEngine
         public static void UpdateActions()
         {
             Camera.UpdateInput();
-            Engine.MainScript.Update();
         }
 
         public static Vector2 GetMousePosition()

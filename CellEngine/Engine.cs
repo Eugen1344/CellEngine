@@ -40,6 +40,7 @@ namespace CellEngine
                 Glfw.PollEvents();
 
                 Input.Update();
+                Engine.MainScript.Update();
 
                 GL.Clear(GL.COLOR_BUFFER_BIT | GL.DEPTH_BUFFER_BIT);
 
